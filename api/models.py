@@ -12,7 +12,7 @@ class Question(Base):
 
     question_id: Mapped[int] = mapped_column(primary_key=True)
     question_body: Mapped[str]
-    response_body: Mapped[str]
+    answer_body: Mapped[str | None]
     created_at: Mapped[datetime.datetime] = mapped_column(server_default=text("TIMEZONE('utc', now())"))
 
     

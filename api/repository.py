@@ -1,7 +1,7 @@
-from db import async_session
-from models import Question
+from api.db import async_session
+from api.models import Question
 from sqlalchemy import desc, insert, select
-from schemas import PostResponse
+from api.schemas import PostResponse
 
 
 class QuizRepository:

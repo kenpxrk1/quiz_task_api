@@ -7,8 +7,11 @@ class Settings(BaseSettings):
     DB_USER: str
     DB_PASS: str
     DB_NAME: str
-
     API_KEY: str
+
+    POSTGRES_DB: str
+    POSTGRES_USER: str
+    POSTGRES_PASSWORD: str
 
     @property
     def DATABASE_URL(self) -> str:
@@ -17,7 +20,7 @@ class Settings(BaseSettings):
         """
         return f"postgresql+asyncpg://{self.DB_USER}:{self.DB_PASS}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
 
-    # "api/.env" when making migration and "/.env" when starting app 
+    # ".env" when making migration and "../.env" when starting app 
     model_config = SettingsConfigDict(env_file=".env")
 
 

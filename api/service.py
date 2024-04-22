@@ -1,6 +1,6 @@
-from repository import QuizRepository
+from api.repository import QuizRepository
 import requests
-from config import settings
+from api.config import settings
 import httpx
 
 
